@@ -1,17 +1,17 @@
 <?php
 
-use App\Controller\produtos;
-use App\Controller\GetUsers;
-use App\model\Users;
-use App\Controller\GetCon;
-require_once 'C:\wamp\www\cursophp.com\crudnuevo\vendor\autoload.php';
+use App\model\produtos;
+use App\model\GetUsers;
+use App\Controller\Users;
+use App\model\GetCon;
+require_once 'C:\Users\infoecia\Desktop\crudPHP\crud\vendor\autoload.php';
 
 session_start();
 if($_SESSION['login']==false){
     header('Location:login.php');
 }
 
-$GetU=new GetUsers();
+/*$GetU=new GetUsers();
 $User =  new Users;
 
 $User->setUsers($_SESSION['nome']);
@@ -21,7 +21,7 @@ $permi =  $GetU->permi($User);
 $total = array();
 foreach($permi as $conc){
    $val = $conc['permi'];
-}
+}*/
 
 
 /*function funcionalidade($valor){

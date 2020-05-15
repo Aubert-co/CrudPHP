@@ -1,0 +1,25 @@
+table{
+    position: relative;
+    top: 10%;
+    left: 20%;
+}
+table, td, th {
+    border: 1px solid black;
+
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 50%;
+    height: 1000px;
+  }
+  
+  th {
+height: 50px;
+text-align: center;
+background-color: rgb(56, 15, 15);
+  }
+  td{
+      text-align: center;
+      font-weight: 900;
+  }
