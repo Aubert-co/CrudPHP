@@ -7,7 +7,7 @@
 namespace  App\model;
 
 require_once '../vendor/autoload.php';
-use App\Controller\Users;
+use App\model\Users;
 
 
 class GetUsers{
