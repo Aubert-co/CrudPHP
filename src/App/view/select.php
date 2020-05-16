@@ -1,6 +1,6 @@
 <?php 
 
-require_once '../controller/actions.php';
+require_once '../Controller/actions.php';
 
 ?>
 
@@ -87,13 +87,13 @@ $('.updateS').click(function(){
     $('#modal').show()
     var id = $(this).attr('id')
     $('#cancelar').click(function(){
-        $('body').load("../view/select.php",function(){
+        $('body').load("../select.php",function(){
     })
    
     })
     $('#confirmar').click(function(){
     $.post("../Controller/update.php",{id:id,name:$('#name').val(),quantidade:$("#quantidade").val()},function(){
-    $('body').load("../view/select.php",function(){
+    $('body').load("../select.php",function(){
     })
     })
     })
@@ -130,7 +130,7 @@ function delte(id){
     url:"../Controller/delete.php",
     data:{id:id},
     success:function(data){
-        $('body').load("../view/select.php",function(){
+        $('body').load("../select.php",function(){
     })
     }
     })

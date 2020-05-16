@@ -1,7 +1,7 @@
 
     <?php 
-    use App\Controller\produtos;
-    require_once 'C:\wamp\www\cursophp.com\crudnuevo\vendor\autoload.php';
+   /* use App\Controller\produtos;
+require_once '../vendor/autoload.php';
 $produto = new produtos;
 
 

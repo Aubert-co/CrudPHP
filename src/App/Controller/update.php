@@ -1,10 +1,11 @@
 <?php 
 
-require_once 'C:\Users\infoecia\Desktop\crudPHP\crud\vendor\autoload.php';
+
+require_once '../vendor/autoload.php';
 
 
 use App\model\produtos;
-use App\model\getProdutos;
+use App\Controller\getProdutos;
 
 
 $getP = new getProdutos;

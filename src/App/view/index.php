@@ -1,7 +1,7 @@
 
 <?php 
 use App\model\produtos;
-require_once 'C:\Users\infoecia\Desktop\crudPHP\crud\vendor\autoload.php';
+require_once '../vendor/autoload.php';
 session_start();
 if($_SESSION['login']==false){
     header('Location:login.php');
@@ -73,7 +73,7 @@ if($_SESSION['login']==false){
 $(document).ready(function(){
   
  $("#btnADC").click(function(){
-     $("body").load("../view/select.php",function(){
+     $("body").load("../select.php",function(){
    })
  })
 

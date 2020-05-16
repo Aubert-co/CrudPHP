@@ -1,10 +1,9 @@
 <?php
 
-use App\model\produtos;
-use App\model\GetUsers;
-use App\Controller\Users;
 use App\model\GetCon;
-require_once 'C:\Users\infoecia\Desktop\crudPHP\crud\vendor\autoload.php';
+
+require_once '../vendor/autoload.php';
+//use App\model\GetCon;
 
 session_start();
 if($_SESSION['login']==false){

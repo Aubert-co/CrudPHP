@@ -36,7 +36,7 @@
 
 </div>
 <script>
-    
+  
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
@@ -48,7 +48,7 @@ function closeNav(){
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
-
+  /*
 $(document).ready(function(){   
 $('#modal').hide()
 $('.delete').click(function(){
@@ -56,7 +56,7 @@ $('.delete').click(function(){
  alert(id)
    $.ajax({
     method:"POST",
-    url:"/model/delete",
+    url:"../Controller/delete",
     data:{id:id},
     success:function(data){
     $('#res').html( data )
@@ -72,13 +72,13 @@ $('.updateS').click(function(){
     $('#modal').show()
     var id = $(this).attr('id')
     $('#cancelar').click(function(){
-        $('body').load("../view/select.php",function(){
+        $('body').load("../Controller/select.php",function(){
     })
    
     })
     $('#confirmar').click(function(){
-    $.post("http://cursophp.com/crudnuevo/App/model/update.php",{id:id,name:$('#name').val(),quantidade:$("#quantidade").val()},function(){
-    $('body').load("../view/select.php",function(){
+    $.post("../Controller/update.php",{id:id,name:$('#name').val(),quantidade:$("#quantidade").val()},function(){
+    $('body').load("../Controller/select.php",function(){
     })
     })
     })
@@ -128,5 +128,5 @@ $(document).ready(function(){
  
     })
 })
-    
+    */
 </script>

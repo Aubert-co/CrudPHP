@@ -2,9 +2,10 @@
 
 namespace App\model;
 
-require_once 'C:\Users\infoecia\Desktop\crudPHP\crud\vendor\autoload.php';
+
+require_once '../vendor/autoload.php';
 use App\model\GetCon;
-use app\model\getProdutos;
+use App\Controller\getProdutos;
 
 
 class produtos{

@@ -1,6 +1,7 @@
 <?php 
 
-require_once 'C:\Users\infoecia\Desktop\dompdf\dompdf\autoload.inc.php';
+/*
+require_once '../vendor/autoload.php';
 require_once './pdf.php';
 
 use Dompdf\Dompdf;

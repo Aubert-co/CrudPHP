@@ -1,10 +1,9 @@
 <?php
 
 
-
-require_once 'C:\Users\infoecia\Desktop\crudPHP\crud\vendor\autoload.php';
-use App\Controller\GetUsers;
-use App\model\Users;
+require_once '../vendor/autoload.php';
+use App\model\GetUsers;
+use App\Controller\Users;
 
 session_start();
 $pessoas = new Users;

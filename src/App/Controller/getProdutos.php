@@ -1,8 +1,9 @@
 <?php   
 
 
-namespace App\model;
-require_once 'C:\Users\infoecia\Desktop\crudPHP\crud\vendor\autoload.php';
+namespace App\Controller;
+
+require_once '../vendor/autoload.php';
 class getProdutos{
     private $nameP;
     private $quantidade;

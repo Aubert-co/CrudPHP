@@ -1,5 +1,5 @@
 <?php 
-require_once 'C:\Users\infoecia\Desktop\crudPHP\crud\vendor\autoload.php';
+require_once '../vendor/autoload.php';
 include_once '../Controller/login.php';
 /*
 use App\Controller\GetUsers;

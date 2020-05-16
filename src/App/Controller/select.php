@@ -2,7 +2,8 @@
 
 
 use App\model\produtos;
-require_once 'C:\Users\infoecia\Desktop\crudPHP\crud\vendor\autoload.php';
+
+require_once '../vendor/autoload.php';
 
 $produto = new produtos();
 
