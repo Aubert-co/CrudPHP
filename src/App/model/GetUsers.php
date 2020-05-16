@@ -1,17 +1,14 @@
 <?php  
 
-
-
-
-
 namespace  App\model;
 
-require_once '../vendor/autoload.php';
-use App\model\Users;
+//require_once '../vendor/autoload.php';
+
+use App\Controller\Users;
 
 
 class GetUsers{
- public $name;
+ 
    
     public function Login(Users $u,$senha){
        

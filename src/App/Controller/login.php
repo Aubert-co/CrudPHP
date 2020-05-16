@@ -1,15 +1,16 @@
 <?php
 
 
-require_once '../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
+
 use App\model\GetUsers;
-use App\model\Users;
+use App\Controller\Users;
 
 session_start();
-$pessoas = new Users;
-$Login = new GetUsers;
-$erros = array();
 
+$Login = new GetUsers;
+
+$pessoas = new Users;
 
 if(isset($_POST['enviar'])){
  

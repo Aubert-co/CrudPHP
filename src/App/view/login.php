@@ -1,6 +1,6 @@
 <?php 
 require_once '../vendor/autoload.php';
-include_once '../Controller/login.php';
+require_once '../Controller/login.php';
 /*
 use App\Controller\GetUsers;
 use App\model\Users;

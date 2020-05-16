@@ -1,8 +1,8 @@
 <?php  
 
-namespace App\model;
+namespace App\Controller;
 
-require_once '../vendor/autoload.php';
+//require_once '../vendor/autoload.php';
 
 
 class Users{

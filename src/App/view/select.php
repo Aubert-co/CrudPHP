@@ -92,7 +92,7 @@ $('.updateS').click(function(){
    
     })
     $('#confirmar').click(function(){
-    $.post("../Controller/update.php",{id:id,name:$('#name').val(),quantidade:$("#quantidade").val()},function(){
+    $.post("./update.php",{id:id,name:$('#name').val(),quantidade:$("#quantidade").val()},function(){
     $('body').load("../select.php",function(){
     })
     })
