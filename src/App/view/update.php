@@ -2,7 +2,7 @@
 
 
 require_once '../vendor/autoload.php';
-
+header('Location:index.php');
 
 use App\model\produtos;
 use App\Controller\getProdutos;
