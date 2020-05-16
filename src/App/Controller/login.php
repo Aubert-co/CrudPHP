@@ -3,7 +3,7 @@
 
 require_once '../vendor/autoload.php';
 use App\model\GetUsers;
-use App\Controller\Users;
+use App\model\Users;
 
 session_start();
 $pessoas = new Users;
