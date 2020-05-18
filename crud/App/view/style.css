@@ -1,0 +1,29 @@
+table{
+    position: fixed;
+    top: 25%;
+    left: 35%;
+    text-align: center;
+    border-collapse: collapse;
+    width: 20%;
+}
+table, td, th {
+    border: 1px solid black;
+
+  }
+  .delete i {
+      color: red;
+  }
+  table ,td{
+      font-weight: 900;
+    
+  }
+table thead tr th{
+ background-color: grey;
+}
+
+div .busca{
+    width: 30%;
+    position: fixed;
+    top: 22%;
+    left: 38%;
+}
