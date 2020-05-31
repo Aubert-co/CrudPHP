@@ -68,7 +68,7 @@ foreach($permi as $conc){
      }
      else if(isset($_POST['test'])){
          $busca =  $_POST['test'] ;
-          $sql = "SELECT *FROM produtos WHERE name like '%".$busca."%' ";
+          $sql = "SELECT *FROM produtos WHERE nome like '%".$busca."%' ";
      
       }else{
           $sql = "SELECT *FROM produtos";
@@ -94,7 +94,7 @@ foreach($permi as $conc){
          <button  class="delete" id='.$pro['id'].'  >  <i class="large material-icons">delete</i></button>
          <button class="updateS" id='.$pro['id'].'> <i class="large material-icons">create</i></button>
          </td>
-         <td>  '.$pro['name'].'</td>
+         <td>  '.$pro['nome'].'</td>
          <td>'.$pro['quantidade'].'</td>
          </tr>
          </tr>
