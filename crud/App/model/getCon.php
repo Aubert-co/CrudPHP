@@ -11,7 +11,7 @@ class GetCon{
    public static function Con(){
        try{
    if(!isset(self::$instance)){
-    self::$instance = new \PDO('mysql:host=localhost;dbname=usuarios;','root','');
+    self::$instance = new \PDO('mysql:host=localhost;dbname=catalago;','root','');
     return self::$instance;
 }
        }catch(\Error $e){

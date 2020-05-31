@@ -31,11 +31,11 @@ class produtos{
 
     }
     public function Add(getProdutos $p){
-        $sql = "INSERT INTO produtos(name,quantidade) VALUES(?,?)";
+        $sql = "INSERT INTO produtos(nome,quantidade) VALUES(?,?)";
 
         $stmt  = GetCon::Con()->prepare($sql);
-        $stmt->bindValue(1,$p->getProdutos);
-        $stmt->bindValue(2,$p->getQuanti);
+        $stmt->bindValue(1,$p->getProdutos());
+        $stmt->bindValue(2,$p->getQuanti());
         $stmt->execute();
        
     }
@@ -47,7 +47,7 @@ class produtos{
         $stmt->execute();
     }
     public function Update(getProdutos $p,$id){
-        $sql = "UPDATE produtos SET name=? ,quantidade=? WHERE id=?";
+        $sql = "UPDATE produtos SET nome=? ,quantidade=? WHERE id=?";
 
         $stmt  = GetCon::Con()->prepare($sql);
         $stmt->bindValue(1,$p->getProdutos());
