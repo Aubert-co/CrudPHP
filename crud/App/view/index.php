@@ -2,10 +2,7 @@
 <?php 
 use App\model\produtos;
 require_once '../vendor/autoload.php';
-session_start();
-if($_SESSION['login']==false){
-    header('Location:login.php');
-}
+require_once '../Controller/sessao.php';
 
 ?>
 

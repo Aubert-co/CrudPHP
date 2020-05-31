@@ -11,7 +11,7 @@ class db{
    public static  function GetConex(){
  
     if(!isset(self::$instance)){
-        self::$instance =  new \PDO('mysql:host=localhost;dbname=php;','root','black');
+        self::$instance =  new \PDO('mysql:host=localhost;dbname=usuarios;','root','');
         return self::$instance;
     }else{
         return self::$instance = "error";

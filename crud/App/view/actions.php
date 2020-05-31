@@ -5,10 +5,7 @@ use App\model\GetCon;
 require_once '../vendor/autoload.php';
 //use App\model\GetCon;
 
-session_start();
-if($_SESSION['login']==false){
-    header('Location:login.php');
-}
+require_once '../Controller/sessao.php';
 
 /*$GetU=new GetUsers();
 $User =  new Users;

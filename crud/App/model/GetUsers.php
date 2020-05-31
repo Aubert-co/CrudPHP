@@ -12,7 +12,7 @@ class GetUsers{
    
     public function Login(Users $u,$senha){
        
-        $sql = "SELECT *FROM pessoas WHERE users=? ";
+        $sql = "SELECT *FROM users WHERE nome=? ";
 
         $stmt  = db::GetConex()->prepare($sql);
         $stmt->bindValue(1,$u->getUsers());
@@ -42,7 +42,7 @@ class GetUsers{
     
     public function permi(Users $u){
        
-        $sql = "SELECT * FROM pessoas WHERE users=?";
+        $sql = "SELECT * FROM users WHERE permi=?";
   
         $stmt = db::GetConex()->prepare($sql);
         $stmt->bindValue(1,$u->getUsers());
@@ -59,7 +59,7 @@ class GetUsers{
       
       public function Cadastro(Users $u){
    
-        $sql = "INSERT INTO pessoas(users,senha,permi) VALUES (?,?,?)";
+        $sql = "INSERT INTO users(nome,senha,permi) VALUES (?,?,?)";
         
         $stmt = db::GetConex()->prepare($sql);
         $stmt -> bindValue(1,$u->getUsers());
