@@ -18,6 +18,9 @@ class crud{
     }
     function add(){
         $sql = "INSERT INTO produtos('nome','quantidade') VALUES(?,?)";
+
+        $stmt = produtos::getConx()->prepare($sql);
+        
     }
 }
 
