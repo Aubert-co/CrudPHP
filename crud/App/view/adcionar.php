@@ -1,5 +1,6 @@
 <?php 
 require_once '../vendor/autoload.php';
+require_once '../Controller/sessao.php';
 use App\model\produtos;
 use App\Controller\getProdutos;
 if(isset($_POST['enviar'])){

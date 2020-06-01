@@ -1,7 +1,6 @@
 
 <?php 
-use App\model\produtos;
-require_once '../vendor/autoload.php';
+
 require_once '../Controller/sessao.php';
 
 ?>
