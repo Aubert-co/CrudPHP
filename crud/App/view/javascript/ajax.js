@@ -13,7 +13,7 @@ function openNav() {
   
   $(document).ready(function(){   
     $('#modal').hide()
-  
+
           $("#buscaname").keypress(function(e){
             var name =  $('#buscaname').val()
             if(name !=''){
@@ -94,4 +94,3 @@ function openNav() {
       })
  
   }
-   

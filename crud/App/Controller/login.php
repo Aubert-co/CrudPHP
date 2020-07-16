@@ -28,7 +28,7 @@ if($_SESSION['erro']==false){
     $_SESSION['nome']=$name;
     }else{
       $erros[]=" senha errada";
-      header('Location:ola');
+    //  header('Location:e');
     }
   }else{
     $erros[]="usuario não encontrado ";
