@@ -2,7 +2,7 @@
 
 
 
-namespace  App\model;
+/*namespace  App\model;
 
 require_once '../vendor/autoload.php';
 
@@ -14,6 +14,6 @@ class GetP{
         $stmt->execute();
     }
 }
-
+*/
 
 ?>
