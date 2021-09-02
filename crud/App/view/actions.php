@@ -5,8 +5,6 @@ use App\model\GetCon;
 require_once '../vendor/autoload.php';
 //use App\model\GetCon;
 
-require_once '../Controller/sessao.php';
-
 /*$GetU=new GetUsers();
 $User =  new Users;
 
@@ -94,7 +92,7 @@ foreach($permi as $conc){
          <button  class="delete" id='.$pro['id'].'  >  <i class="large material-icons">delete</i></button>
          <button class="updateS" id='.$pro['id'].'> <i class="large material-icons">create</i></button>
          </td>
-         <td>  '.$pro['nome'].'</td>
+         <td>  '.$pro['name'].'</td>
          <td>'.$pro['quantidade'].'</td>
          </tr>
          </tr>
@@ -106,13 +104,6 @@ foreach($permi as $conc){
       else{
          $layout1 = "NENHUM REGISTRO ENCONTRADO";
      }
-    
-//return $layout1;
-//}
 echo $layout1;
-//$texto = funcionalidade($val);
-
-
-
 
 ?>
