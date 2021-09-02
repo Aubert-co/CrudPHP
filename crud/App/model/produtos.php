@@ -13,20 +13,16 @@ class produtos{
     public function SelectP(){
       
              
-            $sql ="SELECT *FROM produtos  ";
-            $stmt  = GetCon::Con()->prepare($sql);
+        $sql ="SELECT *FROM produtos ";
+        $stmt  = GetCon::Con()->prepare($sql);
+        $stmt->execute();
            
-            $stmt->execute();
-           
-                
         if($stmt->rowCount()>0){
             $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-               
             return $resultado;
-
-        }else{
-            return [];
         }
+            return [];
+        
     
 
     }
@@ -55,23 +51,7 @@ class produtos{
         $stmt->bindValue(3,$id);
         $stmt->execute();    
     }
-   public function pdf(){
-       $sql = "SELECT *FROM produtos WHERE id = 274";
-
-       $stmt = GetCon::Con()->prepare($sql);
-       $stmt->execute();
-
-       if($stmt->rowCount()>0){
-        $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-           
-        return $resultado;
-
-    }else{
-        return [];
-    }
-
-   }
-    
+  
     
 }
 
