@@ -1,42 +1,45 @@
 <?php 
 
+require_once '../vendor/autoload.php';
 
 use App\model\produtos;
 
-require_once '../vendor/autoload.php';
+function Layout(){
 
-$produto = new produtos();
-
-
+$Product = new produtos();
+$resultado = $Product->SelectP();
 $layout1 ="<div> </div>";
-foreach($produto->SelectP()as $pro){
-    $layout1 .= ' <div id="ok">
-    
-    <table>
-    <thead>
-    <tr>
-        <th>Actions</th>
-        <th>Produto</th>
-        <th>Quantidade</th>
-    </tr>
-    </thead>
-     <tbody>
+$layout1 ='<div id="res"> 
+     <table >
+     <thead>
      <tr>
+         <th>Actions</th>
+         <th>Produto</th>
+         <th>Quantidade</th>
+     </tr>
+     </thead>
+      <tbody>';
+      
+      foreach($resultado as $data){
+        $id = $data['id'];
+        $name = $data['name'];
+        $quantit = $data['quantidade'];
+        $layout1 .= '
          <td>
-         <button class="apagar" id='.$pro['id'].'>apagar</button>
-         <button class="editar" id='.$pro['id'].'>editar</button>
+         <i class="large material-icons" onClick=DeleteFunc('.$id.')>delete</i>
+        <i class="large material-icons">create</i>
          </td>
-         <td>  '.$pro['name'].'</td>
-         <td>'.$pro['quantidade'].'</td>
-     </tbody>
-     </table>
-     ';
-$layout1.='</div>';     
-   }
-  
-echo $layout1;
-
-
+         <td>  '.$name.'</td>
+         <td>'.$quantit.'</td>
+         </tr>
+         </tr>
+         </tbody>';
+      
+      }
+      $layout1 .=  '</table> </div>';
+     
+return $layout1;
+}
 
 
 
