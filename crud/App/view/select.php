@@ -1,7 +1,10 @@
 <?php 
 
 require_once './actions.php';
-
+ echo('<h1>AQUI EM BAIXO</h1>');
+if(isset($_POST['delete'] ) ){
+   echo('ola');
+}
 ?>
 
 <!DOCTYPE html>
@@ -9,8 +12,7 @@ require_once './actions.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./javascript/ajax.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></!--script-->
     <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"-->
   
     <title>Document</title>
@@ -29,7 +31,8 @@ require_once './actions.php';
     <option value="5">5</option>
   </select>
      <div id="results">
-         <?php  $layout1 ?>     </div>
+         <?php  $layout1 ?>     
+    </div>
 
      <div class="modal"id="modal">
         <input type="text"id="name">
@@ -37,12 +40,15 @@ require_once './actions.php';
         <button type="submit" id="confirmar">Confirmar</button>
         <button type="submit"id="cancelar">Cancelar</button>
      </div>
-</body>
 
+     <div id="test">
+ 
+     </div>
+</body>
+<script src="./javascript/ajax.js"></script>
+<script src="./javascript/test.js"></script>
 <script>
 
-
-    
 </script>
 
    

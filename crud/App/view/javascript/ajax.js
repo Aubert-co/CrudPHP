@@ -1,4 +1,4 @@
-  
+ /* 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
@@ -12,7 +12,7 @@ function openNav() {
   }
   
   $(document).ready(function(){   
-    $('#modal').hide()
+
 
           $("#buscaname").keypress(function(e){
             var name =  $('#buscaname').val()
@@ -94,3 +94,4 @@ function openNav() {
       })
  
   }
+*/

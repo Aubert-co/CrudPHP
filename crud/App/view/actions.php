@@ -1,7 +1,7 @@
 <?php
 
 use App\model\GetCon;
-
+use App\model\produtos;
 require_once '../vendor/autoload.php';
 //use App\model\GetCon;
 
@@ -60,7 +60,18 @@ foreach($permi as $conc){
     }
   
 
-  */  if(isset($_POST['select'])){
+  */ 
+  $products = new produtos;
+  
+
+
+  if(isset($_POST['delete'] ) ){
+   $value = $_REQUEST['value'];
+   print($value);
+   echo($value);
+  }
+  if(isset($_POST['select'])){
+   
         $limit =$_POST['select'];
          $sql = "SELECT *FROM produtos limit $limit ";
      }
@@ -86,6 +97,7 @@ foreach($permi as $conc){
      </tr>
      </thead>
       <tbody>';
+      
       foreach($resultado as $pro){
          $layout1 .= '
          <td>
