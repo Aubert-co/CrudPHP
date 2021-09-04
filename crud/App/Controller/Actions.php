@@ -78,13 +78,11 @@ class Actions{
         if(is_numeric($id) && is_string($name) && is_numeric($quantit) )
         {
             $SanitizeId =filter_var($id,FILTER_SANITIZE_NUMBER_INT);
-            $SanitizedName = filter_input($name,FILTER_SANITIZE_STRING);
-            $SanitizedQuantit = filter_input($quantit,FILTER_SANITIZE_NUMBER_INT);
-            echo($SanitizedName);
-            echo($SanitizeId);
-            echo($SanitizedQuantit);
-            // $Product = $this->Connetion();
-            //$Product->Update($SanitizeId,$SanitizedName,$SanitizedQuantit);
+            $SanitizedName = filter_var($name,FILTER_SANITIZE_STRING);
+            $SanitizedQuantit = filter_var($quantit,FILTER_SANITIZE_NUMBER_INT);
+           
+            $Product = $this->Connetion();
+            $Product->Update($SanitizeId,$SanitizedName,$SanitizedQuantit);
 
         }
     }
