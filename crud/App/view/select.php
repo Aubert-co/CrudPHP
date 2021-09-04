@@ -10,8 +10,8 @@
       $id = $_POST['id'];
       $name = $_POST['name'];
       $quantit = $_POST['quantit'];
-      echo($id);
-     // $Actions->ChangeDatas($id,$name,$quantit);
-      echo("ola");  
+   
+     $Actions->ChangeDatas($id,$name,$quantit);
+    
   }
 ?>
