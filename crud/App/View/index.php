@@ -5,20 +5,13 @@
    
     $Actions = new Actions;
 
-
+    $method = $_SERVER['REQUEST_METHOD'];
 
     if(isset($_POST['delete']))
     {
         $id = $_POST['data'];
-       // $Actions->DeleteDatas($id);
-        echo('ola');
-  
+        $Actions->DeleteDatas($id);
     }
-   $method = $_SERVER['REQUEST_METHOD'];
-
-   if($method === 'POST'){
-       echo('POST');
-   }
     
 ?>
 <!DOCTYPE html>
@@ -63,21 +56,20 @@
 <script >
 
 function DeleteFunc(id){
-   
+
     $.ajax({
         method:'POST',
         url:'index.php',
         data:{data:id,delete:'delete'},
         success:function(datas){
-            $('.layout').load(datas)
-            console.log(datas)
+            $('.layout').load('select.php')
         }
     })
     $(".divForm").hide()
 }
 function ChangeFunc(id,name,quantit){
-    
     $(".divForm").show()
+
     const inputName = $('#inputName')
     const inputQuantit = $("#inputQuantit")
     const BtnSend = $("#btnSend")
@@ -88,7 +80,9 @@ function ChangeFunc(id,name,quantit){
     const BtnCancel = $("#cancel").click(()=>{
         inputName.val("")
         inputQuantit.val("")
-        id,name,quantit = ""
+        id = ""
+        name = ""
+        quantit=""
         $(".divForm").hide()
     })
     inputName.val(name)
@@ -96,13 +90,19 @@ function ChangeFunc(id,name,quantit){
 
     BtnSend.click((e)=>{
         const data = {id,name:inputName.val(),quantit:inputQuantit.val(),update:'update'}
-       $.post("index.php",{update:'update',delete:'delete'},function(datas){
-           $('body').load(datas)
-          
+        $.ajax({
+        method:'POST',
+        url:'index.php',
+        data,
+        })
+       .done((datas)=>{
+        $('.layout').load('select.php')
+        id = ""
        })
         $(".divForm").hide()
     })
 }
+
 </script>
 </html>
 
