@@ -1,6 +1,6 @@
 {
     "autoload":{
-        "classmap":["model","Controller"]
+        "classmap":["Model","Controller"]
 
         
     }

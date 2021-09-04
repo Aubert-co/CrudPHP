@@ -7,13 +7,11 @@ namespace Composer\Autoload;
 class ComposerStaticInit46a166ee4ceb65b8994f1de240a9b95c
 {
     public static $classMap = array (
-        'App\\Controller\\Users' => __DIR__ . '/../..' . '/Controller/Users.php',
-        'App\\Controller\\getProdutos' => __DIR__ . '/../..' . '/Controller/getProdutos.php',
-        'App\\model\\GetCon' => __DIR__ . '/../..' . '/model/GetCon.php',
-        'App\\model\\GetP' => __DIR__ . '/../..' . '/model/GetP.php',
-        'App\\model\\GetUsers' => __DIR__ . '/../..' . '/model/GetUsers.php',
-        'App\\model\\db' => __DIR__ . '/../..' . '/model/db.php',
-        'App\\model\\produtos' => __DIR__ . '/../..' . '/model/produtos.php',
+        'App\\Controller\\Actions' => __DIR__ . '/../..' . '/Controller/Actions.php',
+        'App\\Controller\\GetProdutos' => __DIR__ . '/../..' . '/Controller/getProdutos.php',
+        'App\\model\\GetCon' => __DIR__ . '/../..' . '/Model/getCon.php',
+        'App\\model\\Produtos' => __DIR__ . '/../..' . '/Model/Produtos.php',
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

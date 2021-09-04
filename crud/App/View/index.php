@@ -1,11 +1,25 @@
 <?php 
+ 
+ require_once '../vendor/autoload.php';
+ use App\Controller\Actions;
+   
+    $Actions = new Actions;
 
-/*echo('ola');
-$datas = json_decode($_POST['delete']);
-$data = json_decode(file_get_contents("php://input"), true);
-$task = $data['value'];
-*/
 
+
+    if(isset($_POST['delete']))
+    {
+        $id = $_POST['data'];
+       // $Actions->DeleteDatas($id);
+        echo('ola');
+  
+    }
+   $method = $_SERVER['REQUEST_METHOD'];
+
+   if($method === 'POST'){
+       echo('POST');
+   }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +30,11 @@ $task = $data['value'];
     <title>Document</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+    .divForm{
+        display: none;
+    }
+</style>
 </head>
 <body>
         <div class="container">
@@ -23,18 +42,18 @@ $task = $data['value'];
             <main>
                 <div class="layout">
                 <?php
-                    require('../Controller/select.php');
-                    use App\model\produtos;
-                    
-                    $Products = new produtos;
-                        if(isset($_POST['delete']))
-                        {
-                        $id = $_POST['data'];
-                        $Products->Delete($id);
-                        }
-                echo(Layout());
-                    
+                   require('./select.php');
                 ?>
+                </div>
+
+                <div class="divForm">
+                    <form >
+                        <input type="text" id="inputName">
+                        <input type="text" id="inputQuantit">
+
+                        <button id="btnSend">Send</button>
+                        <button id="cancel">cancel</button>
+                    </form>
                 </div>
             </main>
 
@@ -42,21 +61,48 @@ $task = $data['value'];
         </div>
 </body>
 <script >
-const BtnDelete = document.querySelector('#delete')
-const results = document.querySelector(".layout")
 
 function DeleteFunc(id){
+   
     $.ajax({
         method:'POST',
         url:'index.php',
         data:{data:id,delete:'delete'},
-        success:function(data){
-          document.body.innerHTML = data
+        success:function(datas){
+            $('.layout').load(datas)
+            console.log(datas)
         }
     })
-
+    $(".divForm").hide()
 }
+function ChangeFunc(id,name,quantit){
+    
+    $(".divForm").show()
+    const inputName = $('#inputName')
+    const inputQuantit = $("#inputQuantit")
+    const BtnSend = $("#btnSend")
 
+    const Form = $("form").click((e)=>e.preventDefault())
+
+
+    const BtnCancel = $("#cancel").click(()=>{
+        inputName.val("")
+        inputQuantit.val("")
+        id,name,quantit = ""
+        $(".divForm").hide()
+    })
+    inputName.val(name)
+    inputQuantit.val(quantit)
+
+    BtnSend.click((e)=>{
+        const data = {id,name:inputName.val(),quantit:inputQuantit.val(),update:'update'}
+       $.post("index.php",{update:'update',delete:'delete'},function(datas){
+           $('body').load(datas)
+          
+       })
+        $(".divForm").hide()
+    })
+}
 </script>
 </html>
 

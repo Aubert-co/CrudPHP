@@ -4,22 +4,32 @@
 namespace App\Controller;
 
 require_once '../vendor/autoload.php';
-class getProdutos{
+class GetProdutos{
     private $nameP;
     private $quantidade;
-    
-    public function setProdutos($nameP){
-         $this->nameP=$nameP;
+    private $id;
+    public function SetProdutosName($nameP){
+         if(is_string($nameP)){
+            return $this->nameP=$nameP;
+         }
+         echo('o nome deve ser string');
     }
-    public function setQuanti($quantidade){
+    public function SetQuantit($quantidade){
          $this->quantidade=$quantidade;
     }
-    public function getProdutos(){
+    public function SetId($id){
+      $this->id=$id;
+   }
+    public function GetProdutosName(){
        return $this->nameP;
     }
-    public function getQuanti(){
+    public function GetQuantit(){
        return $this->quantidade;
     }
+    public function GetId(){
+       return $this->id;
+    }
+   
 }
 
 

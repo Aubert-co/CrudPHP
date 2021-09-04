@@ -5,16 +5,18 @@ namespace App\model;
 
 require_once '../vendor/autoload.php';
 use App\model\GetCon;
-use App\Controller\getProdutos;
+use App\Controller\GetProdutos;
 
 
-class produtos{
-    
+class Produtos{
+    private function Conetion(){
+        return new GetCon();
+    }
     public function SelectP(){
       
         $sql ="SELECT * FROM produtos";
-        $cone = new GetCon();
-        $con = $cone->Con();
+        $conex = $this->Conetion();
+        $con = $conex->Con();
         $stmt =$con->prepare($sql);
         $stmt->execute();
         
@@ -28,33 +30,34 @@ class produtos{
 
 
     }
-    public function Add(getProdutos $p){
-        $sql = "INSERT INTO produtos(nome,quantidade) VALUES(?,?)";
-        $cone = new GetCon();
-        $con = $cone->Con();
+    public function Add($name,$quantit){
+        $sql = "INSERT INTO produtos(name,quantidade) VALUES(?,?)";
+        $conex = $this->Conetion();
+        $con = $conex->Con();
+
         $stmt  = $con->prepare($sql);
-        $stmt->bindValue(1,$p->getProdutos());
-        $stmt->bindValue(2,$p->getQuanti());
+        $stmt->bindValue(1,$name);
+        $stmt->bindValue(2,$quantit);
         $stmt->execute();
        
     }
     public function Delete($id){
       
         $sql = "DELETE FROM produtos WHERE id=?";
-        $cone = new GetCon();
-        $con = $cone->Con();
+        $conex = $this->Conetion();
+        $con = $conex->Con();
         $stmt  = $con->prepare($sql);
         $stmt->bindValue(1,$id);
         $stmt->execute();
     }
-    public function Update(getProdutos $p,$id){
-        $sql = "UPDATE produtos SET nome=? ,quantidade=? WHERE id=?";
+    public function Update($id ,$name,$quantit){
+        $sql = "UPDATE produtos SET name=? ,quantidade=? WHERE id=?";
 
-        $cone = new GetCon();
-        $con = $cone->Con();
+        $conex = $this->Conetion();
+        $con = $conex->Con();
         $stmt  = $con->prepare($sql);
-        $stmt->bindValue(1,$p->getProdutos());
-        $stmt->bindValue(2,$p->getQuanti());
+        $stmt->bindValue(1,$name);
+        $stmt->bindValue(2,$quantit);
         $stmt->bindValue(3,$id);
         $stmt->execute();    
     }
