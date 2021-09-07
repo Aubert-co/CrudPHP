@@ -5,17 +5,21 @@ namespace App\Controller;
 
 use App\model\Produtos;
 class Actions{
-    
-    private function Connetion(){
-       return  new Produtos;
+    private $Conection;
+
+    private function getConnection()
+    {
+        $this->Conection = new Produtos;
+        return $this->Conection;
     }
+ 
 
     public function AddDatas($name,$email,$job){
         if(is_string($name) && is_string($email) && is_string($job)){
             $SanitizedName = filter_var($name,FILTER_SANITIZE_STRING);
             $SanitizedEmail = filter_var($email,FILTER_SANITIZE_EMAIL);
             $SanitizedJob = filter_var($job,FILTER_SANITIZE_STRING);
-            $Product = $this->Connetion();
+            $Product = $this->getConnection();
             $Product->Add($SanitizedName,$SanitizedEmail,$SanitizedJob);
          
             return ;
@@ -29,14 +33,14 @@ class Actions{
         if(is_numeric($id))
         {
             $SanitizeId =filter_var($id,FILTER_SANITIZE_NUMBER_INT);
-            $Product = $this->Connetion();
+            $Product = $this->getConnection();
             $Product->Delete($SanitizeId);
             return;
         }
         echo('algo deu errado');
     }
     public function  Layout(){
-        $Product = $this->Connetion();
+        $Product = $this->getConnection();
         $resultado = $Product->SelectP();
         if(count($resultado) === 0 )
         {
@@ -94,7 +98,7 @@ class Actions{
             $SanitizedJob = filter_var($job,FILTER_SANITIZE_STRING);
 
             echo($SanitizedName);
-            $Product = $this->Connetion();
+            $Product = $this->getConnection();
             $Product->Update($SanitizeId,$SanitizedName,$SanitizedEmail,$SanitizedJob);
 
         }
